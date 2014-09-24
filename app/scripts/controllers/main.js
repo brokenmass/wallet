@@ -11,15 +11,27 @@ angular.module('walletApp')
 	.controller('MainCtrl',["$scope","sampleDataProvider", function ($scope, dataProvider)
 		{
 		$scope.wallet = {};
-		$scope.transactions = [];
 
-		console.log($scope.wallet);
 		dataProvider.getWallet(function(wallet)
 			{
 			$scope.wallet = wallet;
 			});
-		$scope.addAmount = function(dir)
+		$scope.addTransaction = function(dir)
 			{
+			if(dir === "in")
+				{
 
+				}
+			console.log($scope.withdrawamount,$scope.withdrawamount)
+			dataProvider.addTransaction(dir,
+				dir === "in" ? $scope.depositamount : $scope.withdrawamount,
+				function(wallet)
+				{
+				if(dir === "in")
+					$scope.depositamount = null;
+				else
+					$scope.withdrawamount = null;
+				$scope.wallet = wallet;
+				});
 			}
 		}]);

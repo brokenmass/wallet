@@ -7,9 +7,9 @@
 		<form name="depositform" class="wallet-deposit">
 			<div class="input-group input-group-lg">
 			  	<span class="input-group-addon"><i class="fa fa-{{wallet.currency}}"></i></span>
-			  	<input name="depositamount" type="number" min=0 class="form-control" ng-model="depositamount">
+			  	<input name="depositamount" type="number" step="any" min=0.000001 class="form-control" ng-model="depositamount" required>
 			  	<span class="input-group-btn">
-			        <button class="btn btn-success" type="button">Deposit</button>
+			        <button class="btn btn-success" type="button" ng-disabled="!depositform.depositamount.$valid" ng-click="addTransaction('in')">Deposit</button>
 			    </span>
 			</div>
 			<div class="wallet-alert alert alert-danger" role="alert" ng-show="depositform.depositamount.$error.number">
@@ -19,6 +19,8 @@
 				<strong>Invalid Value</strong> : please insert a positive number.
 			</div>
 		</form>
+		<br/>
+		<br/>
 		<br/>
 	</div>
 	<div class="col-lg-4">
@@ -34,9 +36,9 @@
 		<form name="withdrawform" class="wallet-withdraw">
 			<div class="input-group input-group-lg">
 			  	<span class="input-group-addon"><i class="fa fa-{{wallet.currency}}"></i></span>
-			  	<input name="withdrawamount" type="number" min=0 max={{wallet.total}} class="form-control" ng-model="withdrawamount">
+			  	<input name="withdrawamount" type="number" step="any" min=0.000001 max={{wallet.total}} class="form-control" ng-model="withdrawamount" required>
 			  	<span class="input-group-btn">
-			        <button class="btn btn-danger" type="button">Withdraw</button>
+			        <button class="btn btn-danger" type="button" ng-disabled="!withdrawform.withdrawamount.$valid" ng-click="addTransaction('out')">Withdraw</button>
 			    </span>
 			</div>
 			<div class="wallet-alert alert alert-danger" role="alert" ng-show="withdrawform.withdrawamount.$error.number">
@@ -49,6 +51,8 @@
 				<strong>Invalid Value</strong> : please insert a value lower than your current amount ( {{wallet.total}} ).
 			</div>
 		</form>
+		<br/>
+		<br/>
 		<br/>
 	</div>
 </div>

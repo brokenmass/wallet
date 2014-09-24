@@ -27,14 +27,14 @@ angular.module('walletApp')
     		this.wallet =
     			{
     			currency : "eur",
-    			total    : 2220,
+    			total    : 0,
     			transactions : []
     			}
 
     		if(callback)
     			callback(this.wallet);
     		},
-    	addTransactions : function(dir,amount,callback)
+    	addTransaction : function(dir,amount,callback)
     		{
     		if(this.wallet)
     			{

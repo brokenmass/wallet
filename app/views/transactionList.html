@@ -1,14 +1,16 @@
 <h1>Transaction List</h1>
-<table class="table table-striped table-hover">
+<table class="table table-striped table-hover transactions-table">
 	<thead>
         <tr>
+        	<th></th>
           	<th>Date</th>
          	<th>Amount</th>
         </tr>
     </thead>
     <tbody>
-    	<tr ng-repeat="transaction in wallet.transactions" class="transaction-row transaction-{{transaction.dir}}">
-    		<td class="transaction-data">{{transaction.date | date:"dd/MM//yyyy 'at' h:mm a"}}</td>
+    	<tr ng-repeat="transaction in wallet.transactions | orderBy:-date" class="transaction-row transaction-{{transaction.dir}}">
+    		<td class="transaction-data">{{transaction.dir =="in" ? "Deposit" : "Withdraw"}}</td>
+    		<td class="transaction-data">{{transaction.date | date:"dd/MM/yyyy 'at' h:mm:ss a"}}</td>
     		<td class="transaction-amount">
     			<span class="transaction-dir">{{transaction.dir =="in" ? "+" : "-"}}</span>
     			<span class="transaction-value"> {{transaction.amount}}</span>

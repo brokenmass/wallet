@@ -8,3 +8,37 @@
 	font-size:5em;
 	font-weight:bold;
 	}
+
+.wallet-alert
+	{
+	margin:10px 0;
+	}
+
+table.transactions-table
+	{
+
+	td
+		{
+		line-height:1.3em !important;
+		vertical-align:middle !important;
+		}
+	.transaction-amount
+		{
+		font-weight:bold;
+		font-size:1.3em;
+		}
+	.transaction-in
+		{
+		.transaction-amount
+			{
+			color:#5cb85c;
+			}
+		}
+	.transaction-out
+		{
+		.transaction-amount
+			{
+			color:#d9534f;
+			}
+		}
+	}
