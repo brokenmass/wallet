@@ -1,8 +1,21 @@
+//VARS
+$color_pos : #5cb85c;
+$color_neg : #d9534f;
 
+
+//END VARS
 
 .wallet-main
 	{
 	text-align:center;
+	}
+
+.wallet-deposit,
+.wallet-withdraw
+	{
+	padding-top:20px;
+	min-height:200px;
+	overflow:hidden;
 	}
 
 .wallet-total
@@ -16,13 +29,17 @@
 	margin:10px 0;
 	}
 
+
 table.transactions-table
 	{
-
 	td
 		{
 		line-height:1.3em !important;
 		vertical-align:middle !important;
+		}
+	.header-amount
+		{
+		text-align:right;
 		}
 	.transaction-amount
 		{
@@ -34,14 +51,14 @@ table.transactions-table
 		{
 		.transaction-amount
 			{
-			color:#5cb85c;
+			color:$color_pos;
 			}
 		}
 	.transaction-out
 		{
 		.transaction-amount
 			{
-			color:#d9534f;
+			color:$color_neg;
 			}
 		}
 	}
@@ -53,7 +70,7 @@ table.transactions-table
 	h1
 		{
 		font-size : 4em;
-		color:#d9534f;
+		color:$color_neg;
 		}
 	.reset-choice
 		{
@@ -68,7 +85,7 @@ table.transactions-table
 	h1
 		{
 		font-size : 4em;
-		color:#5cb85c;
+		color:$color_pos;
 		}
 	form
 		{

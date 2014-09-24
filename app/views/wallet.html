@@ -2,9 +2,8 @@
 <h1>Wallet</h1>
 <div class="row">
 	<div class="col-lg-4">
-		<br/>
-		<h4>Deposit</h4>
 		<form name="depositform" class="wallet-deposit">
+			<h4>Deposit</h4>
 			<div class="input-group input-group-lg">
 			  	<span class="input-group-addon"><i class="fa fa-{{wallet.currency}}"></i></span>
 			  	<input name="depositamount" type="number" step="any" min=0.000001 class="form-control" ng-model="depositamount" required>
@@ -19,9 +18,6 @@
 				<strong>Invalid Value</strong> : please insert a positive number.
 			</div>
 		</form>
-		<br/>
-		<br/>
-		<br/>
 	</div>
 	<div class="col-lg-4">
 		<div class="wallet-main">
@@ -31,9 +27,8 @@
 		</div>
 	</div>
 	<div class="col-lg-4">
-		<br/>
-		<h4>Withdraw</h4>
 		<form name="withdrawform" class="wallet-withdraw">
+			<h4>Withdraw</h4>
 			<div class="input-group input-group-lg">
 			  	<span class="input-group-addon"><i class="fa fa-{{wallet.currency}}"></i></span>
 			  	<input name="withdrawamount" type="number" step="any" min=0.000001 max={{wallet.total}} class="form-control" ng-model="withdrawamount" required>
@@ -51,8 +46,5 @@
 				<strong>Invalid Value</strong> : please insert a value lower than your current amount ( {{wallet.total}} ).
 			</div>
 		</form>
-		<br/>
-		<br/>
-		<br/>
 	</div>
 </div>
