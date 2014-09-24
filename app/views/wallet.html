@@ -1,0 +1,54 @@
+
+<h1>Wallet</h1>
+<div class="row">
+	<div class="col-lg-4">
+		<br/>
+		<h4>Deposit</h4>
+		<form name="depositform" class="wallet-deposit">
+			<div class="input-group input-group-lg">
+			  	<span class="input-group-addon"><i class="fa fa-{{wallet.currency}}"></i></span>
+			  	<input name="depositamount" type="number" min=0 class="form-control" ng-model="depositamount">
+			  	<span class="input-group-btn">
+			        <button class="btn btn-success" type="button">Deposit</button>
+			    </span>
+			</div>
+			<div class="wallet-alert alert alert-danger" role="alert" ng-show="depositform.depositamount.$error.number">
+				<strong>Invalid Number</strong> : please insert a correct number.
+			</div>
+			<div class="wallet-alert alert alert-danger" role="alert" ng-show="depositform.depositamount.$error.min">
+				<strong>Invalid Value</strong> : please insert a positive number.
+			</div>
+		</form>
+		<br/>
+	</div>
+	<div class="col-lg-4">
+		<div class="wallet-main">
+			<p>You currently have</p>
+			<p class="wallet-total">{{wallet.total}} <i class="fa fa-{{wallet.currency}}"></i></p>
+			<p>in your wallet</p>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<br/>
+		<h4>Withdraw</h4>
+		<form name="withdrawform" class="wallet-withdraw">
+			<div class="input-group input-group-lg">
+			  	<span class="input-group-addon"><i class="fa fa-{{wallet.currency}}"></i></span>
+			  	<input name="withdrawamount" type="number" min=0 max={{wallet.total}} class="form-control" ng-model="withdrawamount">
+			  	<span class="input-group-btn">
+			        <button class="btn btn-danger" type="button">Withdraw</button>
+			    </span>
+			</div>
+			<div class="wallet-alert alert alert-danger" role="alert" ng-show="withdrawform.withdrawamount.$error.number">
+				<strong>Invalid Number</strong> : please insert a correct number.
+			</div>
+			<div class="wallet-alert alert alert-danger" role="alert" ng-show="withdrawform.withdrawamount.$error.min">
+				<strong>Invalid Value</strong> : please insert a positive number.
+			</div>
+			<div class="wallet-alert alert alert-danger" role="alert" ng-show="withdrawform.withdrawamount.$error.max">
+				<strong>Invalid Value</strong> : please insert a value lower than your current amount ( {{wallet.total}} ).
+			</div>
+		</form>
+		<br/>
+	</div>
+</div>
