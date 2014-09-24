@@ -19,3 +19,10 @@ The building process requires :
 ## Run the application
 
 	grunt serve
+
+
+## Build the application
+
+	grunt build
+
+The folder dist/ will contain the production ready application
