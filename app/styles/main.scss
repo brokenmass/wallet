@@ -61,3 +61,27 @@ table.transactions-table
 		margin:10px 10px;
 		}
 	}
+
+.wallet-create
+	{
+	text-align:center;
+	h1
+		{
+		font-size : 4em;
+		color:#5cb85c;
+		}
+	form
+		{
+		text-align:center;
+		}
+	.currency-selector
+		{
+		width:300px;
+		margin: 0 auto;
+		}
+	.create-choice
+		{
+		font-size:2em;
+		margin:10px 10px;
+		}
+	}

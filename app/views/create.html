@@ -1,0 +1,16 @@
+<div class="wallet-create">
+	<h1> Welcome </h1>
+	<br/>
+	<h2> Please select your wallet's currency</h2>
+	<br/>
+	<br/>
+	<form>
+		<select class="currency-selector form-control input-lg" name="selectedcurrency" ng-model="selectedcurrency">
+		  <option ng-repeat="currency in currencies" value="{{currency.code}}" >{{currency.label}} ( {{currency.symbol}} )</option>
+		</select>
+
+		<br/>
+		<br/>
+		<a class="create-choice btn btn-lg btn-success" ng-click="createWallet()">Create my wallet</a>
+	</form>
+</div>

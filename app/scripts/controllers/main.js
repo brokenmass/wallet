@@ -8,7 +8,7 @@
  * Controller of the walletApp
  */
 angular.module('walletApp')
-	.controller('MainCtrl',["$scope","sampleDataProvider", function ($scope, dataProvider)
+	.controller('MainCtrl',["$scope","$location","sampleDataProvider", function ($scope,$location, dataProvider)
 		{
 		$scope.wallet = {};
 		$scope.currencies = {};
@@ -18,7 +18,10 @@ angular.module('walletApp')
 			});
 		dataProvider.getWallet(function(wallet)
 			{
-			$scope.wallet = wallet;
+			if(wallet)
+				$scope.wallet = wallet;
+			else
+				$location.path("/create");
 			});
 		$scope.addTransaction = function(dir)
 			{

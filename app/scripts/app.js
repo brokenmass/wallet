@@ -25,6 +25,10 @@ angular
 				templateUrl: 'views/main.html',
 				controller: 'MainCtrl'
 			})
+			.when('/create', {
+				templateUrl: 'views/create.html',
+				controller: 'CreatewalletCtrl'
+			})
 			.when('/reset', {
 				templateUrl: 'views/reset.html',
 				controller: 'ResetwalletCtrl'

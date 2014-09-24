@@ -15,33 +15,34 @@ angular.module('walletApp')
     	wallet          : null,
     	currencies      :
     		{
-    		"eur" : { icon : "eur" , symbol : "€"},
-    		"gbp" : { icon : "gbp" , symbol : "£"},
-    		"usd" : { icon : "usd" , symbol : "$"}
+    		"eur" : { label: "Euro",           code : "eur" , symbol : "€"},
+    		"gbp" : { label: "Pound sterling", code : "gbp" , symbol : "£"},
+    		"usd" : { label: "U.S. Dollar",    code : "usd" , symbol : "$"}
     		},
     	getCurrencies   : function(callback)
     		{
     		if(callback)
     			callback(this.currencies);
     		},
+    	createWallet    : function(currency,callback)
+    		{
+    		this.wallet =
+    			{
+    			currency : currency,
+    			total    : 0,
+    			transactions : []
+    			}
+    		if(callback)
+    			callback(this.wallet);
+    		},
     	getWallet       : function(callback)
     		{
-    		if(!this.wallet)
-	    		{
-	    		this.resetWallet(callback);
-	    		}
-    		else if(callback)
+			if(callback)
     			callback(this.wallet);
     		},
     	resetWallet     : function(callback)
     		{
-    		console.log("Dsds")
-    		this.wallet =
-    			{
-    			currency : "eur",
-    			total    : 0,
-    			transactions : []
-    			}
+    		this.wallet = null;
 
     		if(callback)
     			callback(this.wallet);

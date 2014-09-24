@@ -15,7 +15,7 @@ angular.module('walletApp')
 			{
 			dataProvider.resetWallet(function()
 				{
-				$location.url("/#/");
+				$location.url("/");
 				});
 			}
 		}]);
