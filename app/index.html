@@ -17,7 +17,7 @@
     <!-- endbuild -->
   </head>
   <body ng-app="walletApp">
-  	<nav class="navbar navbar-default " role="navigation">
+  	<nav class="navbar navbar-default " role="navigation" ng-controller="NavbarCtrl">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#walletNavbar">
@@ -32,8 +32,8 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="walletNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Reset</a></li>
+					<li ng-class="{ active: isActive('/')}"><a href="#">Home</a></li>
+					<li ng-class="{ active: isActive('/reset')}"><a href="#/reset">Reset</a></li>
 					<li><a href="#">View Source</a></li>
 				</ul>
 			</div>
@@ -70,9 +70,11 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/services/sampledataprovider.js"></script>
+    <script src="scripts/controllers/resetwallet.js"></script>
     <script src="scripts/directives/transactionlist.js"></script>
     <script src="scripts/directives/wallet.js"></script>
+    <script src="scripts/services/sampledataprovider.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
     <!-- endbuild -->
 </body>
 </html>

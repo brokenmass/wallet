@@ -14,7 +14,7 @@
     		<td class="transaction-amount">
     			<span class="transaction-dir">{{transaction.dir =="in" ? "+" : "-"}}</span>
     			<span class="transaction-value"> {{transaction.amount}}</span>
-    			<span class="transaction-currency"> {{wallet.currency}}</span>
+    			<span class="transaction-currency"> {{currencies[wallet.currency].symbol}}</span>
     		</td>
     	</tr>
     </tbody>

@@ -13,6 +13,17 @@ angular.module('walletApp')
     var dataProvider =
     	{
     	wallet          : null,
+    	currencies      :
+    		{
+    		"eur" : { icon : "eur" , symbol : "€"},
+    		"gbp" : { icon : "gbp" , symbol : "£"},
+    		"usd" : { icon : "usd" , symbol : "$"}
+    		},
+    	getCurrencies   : function(callback)
+    		{
+    		if(callback)
+    			callback(this.currencies);
+    		},
     	getWallet       : function(callback)
     		{
     		if(!this.wallet)
@@ -24,6 +35,7 @@ angular.module('walletApp')
     		},
     	resetWallet     : function(callback)
     		{
+    		console.log("Dsds")
     		this.wallet =
     			{
     			currency : "eur",

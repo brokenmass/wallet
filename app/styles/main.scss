@@ -1,3 +1,5 @@
+
+
 .wallet-main
 	{
 	text-align:center;
@@ -26,6 +28,7 @@ table.transactions-table
 		{
 		font-weight:bold;
 		font-size:1.3em;
+		text-align:right;
 		}
 	.transaction-in
 		{
@@ -40,5 +43,21 @@ table.transactions-table
 			{
 			color:#d9534f;
 			}
+		}
+	}
+
+
+.wallet-reset
+	{
+	text-align:center;
+	h1
+		{
+		font-size : 4em;
+		color:#d9534f;
+		}
+	.reset-choice
+		{
+		font-size:2em;
+		margin:10px 10px;
 		}
 	}
