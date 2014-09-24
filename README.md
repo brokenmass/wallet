@@ -1,7 +1,5 @@
-Marco Massarotto
-======
-
 Test Wallet Application
+======
 
 ## Dependencies
 
@@ -26,3 +24,8 @@ The building process requires :
 	grunt build
 
 The folder dist/ will contain the production ready application
+
+
+Marco Massarotto
+
+This content is released under the (http://opensource.org/licenses/MIT) MIT License.
