@@ -9,7 +9,7 @@
  */
 
 angular.module('walletApp')
-	.controller('ResetwalletCtrl',["$scope","$location","sampleDataProvider", function ($scope,$location, dataProvider)
+	.controller('ResetwalletCtrl',["$scope","$location","persistentDataProvider", function ($scope,$location, dataProvider)
 		{
 		$scope.resetWallet = function()
 			{

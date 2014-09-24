@@ -9,7 +9,7 @@
  */
 
 angular.module('walletApp')
-	.controller('CreatewalletCtrl',["$scope","$location","sampleDataProvider", function ($scope,$location, dataProvider)
+	.controller('CreatewalletCtrl',["$scope","$location","persistentDataProvider", function ($scope,$location, dataProvider)
 		{
 		$scope.currencies = {};
 		$scope.selectedcurrency = null;

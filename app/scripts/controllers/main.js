@@ -8,7 +8,7 @@
  * Controller of the walletApp
  */
 angular.module('walletApp')
-	.controller('MainCtrl',["$scope","$location","sampleDataProvider", function ($scope,$location, dataProvider)
+	.controller('MainCtrl',["$scope","$location","persistentDataProvider", function ($scope,$location, dataProvider)
 		{
 		$scope.wallet = {};
 		$scope.currencies = {};
@@ -30,10 +30,9 @@ angular.module('walletApp')
 				dir === "in" ? $scope.depositamount : $scope.withdrawamount,
 				function(wallet)
 					{
-					if(dir === "in")
-						$scope.depositamount = null;
-					else
-						$scope.withdrawamount = null;
+					$scope.depositamount = null;
+					$scope.withdrawamount = null;
+
 					$scope.wallet = wallet;
 					});
 			}
