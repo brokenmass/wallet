@@ -8,7 +8,7 @@
  * Controller of the walletApp
  */
 angular.module('walletApp')
-	.controller('MainCtrl',["$scope","$location","persistentDataProvider", function ($scope,$location, dataProvider)
+	.controller('MainCtrl',['$scope','$location','persistentDataProvider', function ($scope,$location, dataProvider)
 		{
 		$scope.wallet = {};
 		$scope.currencies = {};
@@ -19,15 +19,15 @@ angular.module('walletApp')
 		dataProvider.getWallet(function(wallet)
 			{
 			if(wallet)
-				$scope.wallet = wallet;
+				{$scope.wallet = wallet;}
 			else
-				$location.path("/create");
+				{$location.path('/create');}
 			});
 		$scope.addTransaction = function(dir)
 			{
-			//console.log($scope.withdrawamount,$scope.withdrawamount)
+			//console.log($scope.withdrawamount,$scope.withdrawamount);
 			dataProvider.addTransaction(dir,
-				dir === "in" ? $scope.depositamount : $scope.withdrawamount,
+				dir === 'in' ? $scope.depositamount : $scope.withdrawamount,
 				function(wallet)
 					{
 					$scope.depositamount = null;
@@ -35,5 +35,5 @@ angular.module('walletApp')
 
 					$scope.wallet = wallet;
 					});
-			}
+			};
 		}]);

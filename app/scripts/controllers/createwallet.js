@@ -9,7 +9,7 @@
  */
 
 angular.module('walletApp')
-	.controller('CreatewalletCtrl',["$scope","$location","persistentDataProvider", function ($scope,$location, dataProvider)
+	.controller('CreatewalletCtrl',['$scope','$location','persistentDataProvider', function ($scope,$location, dataProvider)
 		{
 		$scope.currencies = {};
 		$scope.selectedcurrency = null;
@@ -22,14 +22,14 @@ angular.module('walletApp')
 			{
 			if(wallet)
 				{
-				$location.path("/");
+				$location.path('/');
 				}
 			});
 		$scope.createWallet = function()
 			{
 			dataProvider.createWallet($scope.selectedcurrency,function()
 				{
-				$location.path("/");
+				$location.path('/');
 				});
-			}
+			};
 		}]);

@@ -15,14 +15,14 @@ angular.module('walletApp')
     	wallet          : null,
     	currencies      :
     		{
-    		"eur" : { label: "Euro",           code : "eur" , symbol : "€"},
-    		"gbp" : { label: "Pound sterling", code : "gbp" , symbol : "£"},
-    		"usd" : { label: "U.S. Dollar",    code : "usd" , symbol : "$"}
+    		'eur' : { label: 'Euro',           code : 'eur' , symbol : '€'},
+    		'gbp' : { label: 'Pound sterling', code : 'gbp' , symbol : '£'},
+    		'usd' : { label: 'U.S. Dollar',    code : 'usd' , symbol : '$'}
     		},
     	getCurrencies   : function(callback)
     		{
     		if(callback)
-    			callback(this.currencies);
+    			{callback(this.currencies);}
     		},
     	createWallet    : function(currency,callback)
     		{
@@ -31,21 +31,21 @@ angular.module('walletApp')
     			currency : currency,
     			total    : 0,
     			transactions : []
-    			}
+    			};
     		if(callback)
-    			callback(this.wallet);
+    			{callback(this.wallet);}
     		},
     	getWallet       : function(callback)
     		{
 			if(callback)
-    			callback(this.wallet);
+    			{callback(this.wallet);}
     		},
     	resetWallet     : function(callback)
     		{
     		this.wallet = null;
 
     		if(callback)
-    			callback(this.wallet);
+    			{callback(this.wallet);}
     		},
     	addTransaction : function(dir,amount,callback)
     		{
@@ -57,11 +57,11 @@ angular.module('walletApp')
 		    		date  : new Date(),
 		    		amount: amount
 		    		});
-    			this.wallet.total += (dir==="in" ? 1 : -1)*amount;
+    			this.wallet.total += (dir==='in' ? 1 : -1)*amount;
 	    		if(callback)
-	    			callback(this.wallet);
+	    			{callback(this.wallet);}
     			}
     		},
-    	}
+    	};
     return dataProvider;
   });

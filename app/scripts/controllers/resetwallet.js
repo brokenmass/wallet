@@ -9,13 +9,13 @@
  */
 
 angular.module('walletApp')
-	.controller('ResetwalletCtrl',["$scope","$location","persistentDataProvider", function ($scope,$location, dataProvider)
+	.controller('ResetwalletCtrl',['$scope','$location','persistentDataProvider', function ($scope,$location, dataProvider)
 		{
 		$scope.resetWallet = function()
 			{
 			dataProvider.resetWallet(function()
 				{
-				$location.url("/");
+				$location.url('/');
 				});
-			}
+			};
 		}]);

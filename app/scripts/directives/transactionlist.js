@@ -11,10 +11,6 @@ angular.module('walletApp')
 		{
 		return {
 			templateUrl: 'views/transactionList.html',
-			restrict: 'E',
-			link: function postLink(scope, element, attrs)
-				{
-
-				}
+			restrict: 'E'
 			};
 		});
