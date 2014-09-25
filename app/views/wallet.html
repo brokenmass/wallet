@@ -8,7 +8,7 @@
 			  	<span class="input-group-addon"><i class="fa fa-{{wallet.currency}}"></i></span>
 			  	<input name="depositamount" type="number" step="any" min=0.000001 class="form-control" ng-model="depositamount" required>
 			  	<span class="input-group-btn">
-			        <button class="btn btn-success" type="button" ng-disabled="!depositform.depositamount.$valid" ng-click="addTransaction('in')">Deposit</button>
+			        <button class="btn btn-success" type="submit" ng-disabled="!depositform.depositamount.$valid" ng-click="addTransaction('in')">Deposit</button>
 			    </span>
 			</div>
 			<div class="wallet-alert alert alert-danger" role="alert" ng-show="depositform.depositamount.$error.number">
@@ -33,7 +33,7 @@
 			  	<span class="input-group-addon"><i class="fa fa-{{wallet.currency}}"></i></span>
 			  	<input name="withdrawamount" type="number" step="any" min=0.000001 max={{wallet.total}} class="form-control" ng-model="withdrawamount" required>
 			  	<span class="input-group-btn">
-			        <button class="btn btn-danger" type="button" ng-disabled="!withdrawform.withdrawamount.$valid" ng-click="addTransaction('out')">Withdraw</button>
+			        <button class="btn btn-danger" type="submit" ng-disabled="!withdrawform.withdrawamount.$valid" ng-click="addTransaction('out')">Withdraw</button>
 			    </span>
 			</div>
 			<div class="wallet-alert alert alert-danger" role="alert" ng-show="withdrawform.withdrawamount.$error.number">
